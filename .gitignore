@@ -102,11 +102,11 @@ fabric.properties
 .mtj.tmp/
 
 # Package Files #
-*.jar
+-lib/*.jar
 *.war
 *.nar
 *.ear
-*.zip
+-lib/*.zip
 *.tar.gz
 *.rar
 
