@@ -2,13 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-<<<<<<< HEAD
       <module name="SudokuMaze_main" target="1.8" />
       <module name="SudokuMaze_test" target="1.8" />
-=======
-      <module name="io.westergun.sudokumaze.main" target="1.8" />
-      <module name="io.westergun.sudokumaze.test" target="1.8" />
->>>>>>> 9ecfeb90f6c8d124ea630309a474baeff9bbfaa0
     </bytecodeTargetLevel>
   </component>
 </project>
