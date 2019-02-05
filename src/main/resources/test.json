@@ -1,0 +1,41 @@
+{
+  database: sacarino_es,
+  table: members_purchases,
+  type: update,
+  ts: 1547128578,
+  xid: 1640166417,
+  commit: true,
+  data: {
+    mempurchases_PK: 12460620,
+    mempurchases_FK_member_PK: 58753390,
+    mempurchases_first_date: 2014-01-17
+    08: 13
+    :
+    38,
+    mempurchases_last_date: 2019-01-10
+    14: 56
+    :
+    18,
+    mempurchases_total_number: 11,
+    mempurchases_total: 2.9940001E13,
+    mempurchases_average: 2.49500008E12,
+    mempurchases_interval: 0,
+    mempurchases_incoherence: [
+      0
+    ],
+    mempurchases_new_number: 11,
+    mempurchases_cancel_full: 0,
+    mempurchases_stockoutIOW_full: 0,
+    mempurchases_stockoutIOW_partial: 0,
+    mempurchases_last_problem: 0
+  },
+  old: {
+    mempurchases_last_date: 2018-10-19
+    07: 58
+    :
+    16,
+    mempurchases_total_number: 10,
+    mempurchases_average: 2.72181835E12,
+    mempurchases_new_number: 10
+  }
+}

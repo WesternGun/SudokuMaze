@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SudokuMaze.iml" filepath="$PROJECT_DIR$/.idea/modules/SudokuMaze.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SudokuMaze_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SudokuMaze_main.iml" group="SudokuMaze" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SudokuMaze_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SudokuMaze_test.iml" group="SudokuMaze" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.westergun.sudokumaze.iml" filepath="$PROJECT_DIR$/.idea/modules/io.westergun.sudokumaze.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.westergun.sudokumaze.main.iml" filepath="$PROJECT_DIR$/.idea/modules/io.westergun.sudokumaze.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.westergun.sudokumaze.test.iml" filepath="$PROJECT_DIR$/.idea/modules/io.westergun.sudokumaze.test.iml" />
+>>>>>>> 9ecfeb90f6c8d124ea630309a474baeff9bbfaa0
+    </modules>
+  </component>
+</project>
