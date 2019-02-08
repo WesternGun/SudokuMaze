@@ -19,7 +19,7 @@ dependencies {
 apply plugin: 'com.diffplug.gradle.eclipse.mavencentral'
 eclipseMavenCentral {
     release '4.7.0', {
-        compile 'org.eclipse.swt' // SWT for Windows in Gradle
+        compile 'org.eclipse.swt:3.106.0' // SWT for Windows in Gradle
         useNativesForRunningPlatform()
     }
 }
