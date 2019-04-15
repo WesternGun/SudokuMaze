@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.westergun.SudokuMaze.iml" filepath="$PROJECT_DIR$/.idea/modules/io.westergun.SudokuMaze.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.westergun.SudokuMaze.main.iml" filepath="$PROJECT_DIR$/.idea/modules/io.westergun.SudokuMaze.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.westergun.SudokuMaze.test.iml" filepath="$PROJECT_DIR$/.idea/modules/io.westergun.SudokuMaze.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SudokuMaze.iml" filepath="$PROJECT_DIR$/.idea/modules/SudokuMaze.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SudokuMaze_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SudokuMaze_main.iml" group="SudokuMaze" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SudokuMaze_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SudokuMaze_test.iml" group="SudokuMaze" />
     </modules>
   </component>
 </project>
