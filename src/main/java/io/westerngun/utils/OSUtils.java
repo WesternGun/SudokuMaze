@@ -1,6 +1,7 @@
 package io.westerngun.utils;
 
-import lombok.Getter;
+import java.util.Iterator;
+import java.util.Properties;
 
 
 /**
@@ -17,13 +18,11 @@ import lombok.Getter;
  * </ul>
  *
  * The result is stored in static fields for repetive usage; conditions are only judged
- * once in all lifecycle of the application. Lombok <code>Getter</code> is used instead of
- * <code>Data</code> to avoid external change to the values.
+ * once in all lifecycle of the application. We expose methods to get values, not the fields.
  * </p>
  *
  * @author WesternGun
  */
-@Getter
 public class OSUtils {
     private static Boolean isWindows = null;
     private static Boolean isMac = null;
@@ -97,4 +96,11 @@ public class OSUtils {
         return System.getProperty("os.arch");
     }
 
+    public static void printAllSystemProps() {
+        Properties sysProp = System.getProperties();
+        for (Iterator<Object> keyIt = sysProp.keySet().iterator(); keyIt.hasNext();) {
+            Object key = keyIt.next();
+            System.out.println(key + ": " + sysProp.get(key));
+        }
+    }
 }
