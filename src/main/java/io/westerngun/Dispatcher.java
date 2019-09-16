@@ -2,7 +2,9 @@ package io.westerngun;
 
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.events.PaintEvent;
+import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Drawable;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
@@ -24,22 +26,23 @@ public class Dispatcher {
             shell.setMaximized(false);
             shell.setCapture(false); // if "true", cursor will be "halting" in the app window in Win10
             shell.setText("Sudoku Maze by WesternGun");
-
+            shell.addPaintListener(new PaintListener(){
+                public void paintControl(PaintEvent e){
+                    Rectangle clientArea = shell.getClientArea();
+                    e.gc.drawLine(0,0,clientArea.width,clientArea.height);
+                }
+            });
             Image small = new Image(display, 16, 16);
-            GC gc = new GC(small);
-            gc.setBackground(display.getSystemColor(SWT.COLOR_BLUE));
-            gc.fillArc(0, 0, 16, 16, 45, 270);
-            gc.dispose();
+            DrawIconBlue drawIconBlue = new DrawIconBlue(small, display);
+            drawIconBlue.drawOnImageAndRelease();
 
             Image large = new Image(display, 64, 64);
-            GC gc2 = new GC(large);
-            gc2.setBackground(display.getSystemColor(SWT.COLOR_RED));
-            gc2.fillArc(0, 0, 64, 64, 45, 270);
-            gc2.dispose();
+            DrawIconRed drawIconRed = new DrawIconRed(large, display);
+            drawIconRed.drawOnImageAndRelease();
 
             // TODO it seems that Win10 only looks for the 16x16 icon, without considering other possibilities
             // when 16x16 is absent, will pick 64x64.
-            shell.setImages(new Image[] { large, small });
+            shell.setImages(new Image[] { small, large });
 
 
             // center the window on primary monitor
@@ -71,5 +74,31 @@ public class Dispatcher {
         log.trace("OS platform: {}", System.getProperty("os.name"));
         log.trace("OS version: {}", System.getProperty("os.version"));
         log.trace("OS arch: {}", System.getProperty("os.arch"));
+    }
+
+    static class DrawIconRed extends Drawer {
+
+        DrawIconRed(Drawable drawable, Display display) {
+            super(drawable, display);
+        }
+
+        @Override
+        void draw() {
+            getGc().setBackground(getDisplay().getSystemColor(SWT.COLOR_RED));
+            getGc().fillArc(0, 0, 64, 64, 45, 270);
+        }
+    }
+
+    static class DrawIconBlue extends Drawer {
+
+        DrawIconBlue(Drawable drawable, Display display) {
+            super(drawable, display);
+        }
+
+        @Override
+        void draw() {
+            getGc().setBackground(getDisplay().getSystemColor(SWT.COLOR_BLUE));
+            getGc().fillArc(0, 0, 16, 16, 45, 270);
+        }
     }
 }

@@ -20,10 +20,28 @@ dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
 }
 
+def printOS() {
+    // println ("OS: ${osgi.platform}")
+    //println(${osgi.platform})
+}
+
+task checkOS {
+    changeOS("linux")
+    printOS()
+}
+
+def changeOS(os) {
+    // = os
+}
+
+task antBuild {
+    ant.importBuild("build.xml")
+}
+
 apply plugin: 'com.diffplug.gradle.eclipse.mavencentral'
 eclipseMavenCentral {
     release '4.7.0', {
         compile 'org.eclipse.swt' // SWT for Windows in Gradle
-        useNativesForRunningPlatform()
+        useNativesForRunningPlatform() // replace '${orgi.platform}' with current building OS
     }
 }

@@ -1,0 +1,26 @@
+<!-- build script for Ant -->
+<project>
+    <!-- clean build from zero -->
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    <!-- compile origin and target -->
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+    <!-- how to build an executable jar -->
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/SukudoMaze.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="io.westerngun.Dispatcher"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="build/jar/SukudoMaze.jar" fork="true"/>
+    </target>
+
+</project>
