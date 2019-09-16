@@ -2,8 +2,6 @@ package io.westerngun;
 
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.PaintEvent;
-import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.Drawable;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
@@ -26,11 +24,9 @@ public class Dispatcher {
             shell.setMaximized(false);
             shell.setCapture(false); // if "true", cursor will be "halting" in the app window in Win10
             shell.setText("Sudoku Maze by WesternGun");
-            shell.addPaintListener(new PaintListener(){
-                public void paintControl(PaintEvent e){
-                    Rectangle clientArea = shell.getClientArea();
-                    e.gc.drawLine(0,0,clientArea.width,clientArea.height);
-                }
+            shell.addPaintListener(e -> { // PaintListener
+                Rectangle clientArea = shell.getClientArea();
+                e.gc.drawLine(0, 0, clientArea.width, clientArea.height);
             });
             Image small = new Image(display, 16, 16);
             DrawIconBlue drawIconBlue = new DrawIconBlue(small, display);
