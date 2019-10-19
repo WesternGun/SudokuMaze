@@ -1,5 +1,6 @@
 package io.westerngun;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.graphics.Drawable;
@@ -77,8 +78,8 @@ public class MainFrame implements Runnable {
         DrawIconRed drawIconRed = new DrawIconRed(large, display);
         drawIconRed.drawOnImageAndRelease();
 
-        // when 16x16 is absent, will pick 64x64.
-        // TODO it seems that Win10 only gives 16x16 icon priority when larger and smaller icons coexist.
+        /* TODO it seems that Win10 gives 16x16 icon priority when larger and smaller icons coexist.
+           Only when 16x16 is absent, will pick 64x64. */
         shell.setImages(new Image[] {large, small});
     }
 
