@@ -11,9 +11,18 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
-
+ext['junit-jupiter.version'] = '5.4.0'
 dependencies {
-    compile 'junit:junit:4.12'
+    // compile 'junit:junit:4.12'
+
+    // junit 5 (all in one, from 5.4)
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.4.0'
+    //testCompile 'org.mockito:mockito-core:2.21.0'
+    //testCompile 'org.mockito:mockito-junit-jupiter:2.21.0'
+
+    // java-hamcrest
+    testCompile 'org.hamcrest:hamcrest-library:1.3'
+    testCompile 'org.hamcrest:hamcrest-core:1.3'
     compileOnly 'org.projectlombok:lombok:1.18.6'
     annotationProcessor 'org.projectlombok:lombok:1.18.6'
     compile 'org.slf4j:slf4j-api:1.7.25'
@@ -35,9 +44,9 @@ def changeOS(os) {
     // = os
 }
 
-task antBuild {
-    ant.importBuild("build.xml")
-}
+//task antBuild {
+//    ant.importBuild("build.xml")
+//}
 
 apply plugin: 'com.diffplug.gradle.eclipse.mavencentral'
 eclipseMavenCentral {
@@ -45,4 +54,9 @@ eclipseMavenCentral {
         compile 'org.eclipse.swt' // SWT for Windows in Gradle
         useNativesForRunningPlatform() // replace '${orgi.platform}' with current building OS
     }
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties = System.properties // VM options will be seen
 }
